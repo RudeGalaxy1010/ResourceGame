@@ -17,11 +17,29 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        Move();
+        Rotate();
+    }
+
+    private void Move()
+    {
         if (IsMoving == false)
         {
             return;
         }
 
         _navMeshAgent.Move(_playerInput.Velocity * _navMeshAgent.speed * Time.deltaTime);
+    }
+
+    private void Rotate()
+    {
+        if (IsMoving == false)
+        {
+            return;
+        }
+
+        Quaternion targetRotation = Quaternion.LookRotation(_playerInput.Velocity);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 
+            _navMeshAgent.angularSpeed * Time.deltaTime);
     }
 }
