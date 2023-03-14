@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
 
     private NavMeshAgent _navMeshAgent;
 
+    public bool IsMoving => _playerInput.Velocity != Vector3.zero;
+
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -15,7 +17,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        if (_playerInput.Velocity == Vector3.zero)
+        if (IsMoving == false)
         {
             return;
         }
