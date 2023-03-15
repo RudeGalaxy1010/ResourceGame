@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4311cd2a3841546498ab881d4c5ce621, type: 3}
-  m_Name: Wood
+  m_Script: {fileID: 11500000, guid: 87237d463ad7a9d40a878c7593b9fed6, type: 3}
+  m_Name: Default Pick Up Settings
   m_EditorClassIdentifier: 
-  ResourceType: 0
-  Prefab: {fileID: 81774307376710352, guid: cc1e683f6e66e00469b4ac979a5f7ffb, type: 3}
+  MoveSpeed: 5
+  ScaleSpeed: 3
