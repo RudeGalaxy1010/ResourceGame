@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class InProduction : State
 {
-    [SerializeField] private Resource _resource;
+    [SerializeField] private ResourceData _resource;
     [SerializeField] private ProductionSettings _productionSettings;
-    [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private ResourceSpawner _resourceSpawner;
 
     private float _timer;
     private int _resourcesProduced;
@@ -23,7 +23,7 @@ public class InProduction : State
 
         if (_timer >= _productionSettings.TimeToGetResourceUnit)
         {
-            Instantiate(_resource.Prefab, _spawnPoint.position, Quaternion.identity);
+            _resourceSpawner.SpawnResource(_resource.Prefab);
             _resourcesProduced++;
             _timer = 0;
         }

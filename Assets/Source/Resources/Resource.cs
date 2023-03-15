@@ -1,8 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Custom/Resource", fileName = "New Resource")]
-public class Resource : ScriptableObject
+public class Resource : MonoBehaviour
 {
-    public string Name;
-    public GameObject Prefab;
+    
 }
