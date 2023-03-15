@@ -167,11 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd143d455153928459336ef107255ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropHeight: 1
-  _maxSpread: 1
-  _player: {fileID: 1358838914}
-  _collectDelay: 0.35
-  _speed: 6
 --- !u!1 &308471677
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +265,7 @@ MonoBehaviour:
   _transitions:
   - {fileID: 308471684}
   - {fileID: 308471685}
-  _resource: {fileID: 11400000, guid: 76010d9986c1c3348abcb4474a9ad8f8, type: 2}
+  _resourcePrefab: {fileID: 4720504803226487498, guid: cc1e683f6e66e00469b4ac979a5f7ffb, type: 3}
   _productionSettings: {fileID: 11400000, guid: d1460d03e6475e34a99f286d74cf25b2, type: 2}
   _resourceSpawner: {fileID: 88254414}
 --- !u!114 &308471684

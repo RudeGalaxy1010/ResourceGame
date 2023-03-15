@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4841892271856083548}
   - component: {fileID: 3869395822078621217}
   - component: {fileID: 81774307376710352}
+  - component: {fileID: 4720504803226487498}
   m_Layer: 0
   m_Name: Resource
   m_TagString: Untagged
@@ -157,3 +158,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickUpSettings: {fileID: 11400000, guid: 4b4a250e6b736d34ca06ead6a3401865, type: 2}
+--- !u!114 &4720504803226487498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606463865293755073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5ef7cb2b3a1a74782f14828791d65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resourceType: 0
+  _quantity: 1

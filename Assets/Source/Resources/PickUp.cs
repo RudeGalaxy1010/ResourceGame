@@ -1,20 +1,28 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Collider), typeof(Resources))]
 public class PickUp : MonoBehaviour
 {
+    private const float MinDistance = 0.1f;
+
     [SerializeField] private PickUpSettings _pickUpSettings;
 
-    private Transform _target;
+    private Resource _resource;
+    private Player _player;
+
+    private void Awake()
+    {
+        _resource = GetComponent<Resource>();
+    }
 
     private void Update()
     {
-        if (_target == null)
+        if (_player == null)
         {
             return;
         }
 
-        MoveTo(_target.position);
+        MoveTo(_player.transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,7 +35,7 @@ public class PickUp : MonoBehaviour
 
     private void MoveTo(Vector3 position)
     {
-        if (transform.position == position)
+        if (Vector3.Distance(transform.position, position) <= MinDistance)
         {
             EndMove();
         }
@@ -40,6 +48,12 @@ public class PickUp : MonoBehaviour
 
     private void StartMoveTo(Player player)
     {
+        if (TryGetComponent(out Rigidbody rigidbody))
+        {
+            rigidbody.useGravity = false;
+            rigidbody.velocity = Vector3.zero;
+        }
+
         Collider[] colliders = GetComponents<Collider>();
 
         for (int i = 0; i < colliders.Length; i++)
@@ -47,12 +61,12 @@ public class PickUp : MonoBehaviour
             colliders[i].enabled = false;
         }
 
-        _target = player.transform;
+        _player = player;
     }
 
     private void EndMove()
     {
-        // Collect
+        _player.Inventory.AddResource(_resource.ResourceType, _resource.Quantity);
         Destroy(gameObject);
     }
 }

@@ -4,7 +4,7 @@ public class ResourceSpawner : MonoBehaviour
 {
     private const float MaxRotation = 360f;
 
-    public void SpawnResource(PickUp resource)
+    public void SpawnResource(Resource resource)
     {
         Instantiate(resource, transform.position, GetRandomRotation());
     }
