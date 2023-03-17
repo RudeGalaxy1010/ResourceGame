@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6606463865293755073
+--- !u!1 &741939406918866611
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6606463865293755077}
-  - component: {fileID: 6606463865293755078}
-  - component: {fileID: 6606463865293755079}
-  - component: {fileID: 3414972844262659990}
-  - component: {fileID: 8083996308554274894}
-  - component: {fileID: 4841892271856083548}
-  - component: {fileID: 3869395822078621217}
-  - component: {fileID: 81774307376710352}
-  - component: {fileID: 4720504803226487498}
+  - component: {fileID: 4108139491827977232}
+  - component: {fileID: 6977434716476576404}
+  - component: {fileID: 5539823667551117354}
   m_Layer: 0
-  m_Name: Metal
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6606463865293755077
+--- !u!4 &4108139491827977232
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606463865293755073}
+  m_GameObject: {fileID: 741939406918866611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 6606463865293755077}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6606463865293755078
+--- !u!33 &6977434716476576404
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606463865293755073}
+  m_GameObject: {fileID: 741939406918866611}
   m_Mesh: {fileID: 4300000, guid: dfe6acc385d0e894aa305254a047c0fa, type: 3}
---- !u!23 &6606463865293755079
+--- !u!23 &5539823667551117354
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606463865293755073}
+  m_GameObject: {fileID: 741939406918866611}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -89,6 +83,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6606463865293755073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6606463865293755077}
+  - component: {fileID: 3414972844262659990}
+  - component: {fileID: 8083996308554274894}
+  - component: {fileID: 4841892271856083548}
+  - component: {fileID: 3869395822078621217}
+  - component: {fileID: 81774307376710352}
+  - component: {fileID: 4720504803226487498}
+  m_Layer: 0
+  m_Name: Metal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6606463865293755077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606463865293755073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4108139491827977232}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3414972844262659990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -100,7 +132,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.085098, y: 0.062849455, z: 0.07951708}
+  m_Size: {x: 0.5, y: 0.062849455, z: 0.07951708}
   m_Center: {x: -0.00048303604, y: 0, z: 0.040839553}
 --- !u!54 &8083996308554274894
 Rigidbody:
@@ -129,7 +161,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3869395822078621217
 MonoBehaviour:

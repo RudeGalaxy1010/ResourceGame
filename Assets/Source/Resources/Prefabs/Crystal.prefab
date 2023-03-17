@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6606463865293755073
+--- !u!1 &806626847109788827
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6606463865293755077}
-  - component: {fileID: 6606463865293755078}
-  - component: {fileID: 6606463865293755079}
-  - component: {fileID: 370706672724793219}
-  - component: {fileID: 8083996308554274894}
-  - component: {fileID: 4841892271856083548}
-  - component: {fileID: 3869395822078621217}
-  - component: {fileID: 81774307376710352}
-  - component: {fileID: 4720504803226487498}
+  - component: {fileID: 6824499596417166672}
+  - component: {fileID: 5106907044319944054}
+  - component: {fileID: 3468460352719032006}
   m_Layer: 0
-  m_Name: Crystal
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6606463865293755077
+--- !u!4 &6824499596417166672
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606463865293755073}
+  m_GameObject: {fileID: 806626847109788827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: -0.125}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 6606463865293755077}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6606463865293755078
+--- !u!33 &5106907044319944054
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606463865293755073}
+  m_GameObject: {fileID: 806626847109788827}
   m_Mesh: {fileID: 4300000, guid: 4d7cc98ae5cab2947a8d9fa3c15e4fa8, type: 3}
---- !u!23 &6606463865293755079
+--- !u!23 &3468460352719032006
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606463865293755073}
+  m_GameObject: {fileID: 806626847109788827}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -89,6 +83,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6606463865293755073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6606463865293755077}
+  - component: {fileID: 370706672724793219}
+  - component: {fileID: 8083996308554274894}
+  - component: {fileID: 4841892271856083548}
+  - component: {fileID: 3869395822078621217}
+  - component: {fileID: 81774307376710352}
+  - component: {fileID: 4720504803226487498}
+  m_Layer: 0
+  m_Name: Crystal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6606463865293755077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606463865293755073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6824499596417166672}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &370706672724793219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -100,8 +132,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05145663, y: 0.05184012, z: 0.037308287}
-  m_Center: {x: -0.0055656256, y: 0.02346941, z: 0.013663684}
+  m_Size: {x: 0.49696335, y: 0.4894728, z: 0.4}
+  m_Center: {x: -0.04969503, y: -0.021266997, z: 0.013663679}
 --- !u!54 &8083996308554274894
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,7 +161,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3869395822078621217
 MonoBehaviour:

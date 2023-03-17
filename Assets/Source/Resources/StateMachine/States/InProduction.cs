@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InProduction : State
 {
-    [SerializeField] private Resource _resourcePrefab;
+    [SerializeField] private ResourceType _resourceType;
     [SerializeField] private ProductionSettings _productionSettings;
     [SerializeField] private ResourceSpawner _resourceSpawner;
 
@@ -23,7 +23,7 @@ public class InProduction : State
 
         if (_timer >= _productionSettings.TimeToGetResourceUnit)
         {
-            _resourceSpawner.SpawnResource(_resourcePrefab);
+            _resourceSpawner.SpawnResource(_resourceType);
             _resourcesProduced++;
             _timer = 0;
         }

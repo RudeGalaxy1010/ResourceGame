@@ -7,6 +7,7 @@ public class PlayerDetector : MonoBehaviour
     private List<Player> _players;
 
     public bool IsPlayerInRange => _players.Count > 0;
+    public IReadOnlyList<Player> Players => _players;
 
     private void Awake()
     {
