@@ -16,4 +16,4 @@ MonoBehaviour:
   InputValue: 5
   OutputResource: 2
   OutputValue: 1
-  TransformationDuration: 1
+  ProductionDuration: 4

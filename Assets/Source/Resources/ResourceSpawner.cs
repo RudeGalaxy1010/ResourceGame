@@ -7,14 +7,21 @@ public class ResourceSpawner : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private ResourcesPool _pool;
 
-    public void SpawnResource(ResourceType resourceType)
+    public Resource SpawnResource(ResourceType resourceType)
     {
         Resource resource = _pool.Get(resourceType);
         PickUp pickUp = resource.GetComponent<PickUp>();
-        pickUp.ResetAll();
         pickUp.PickedUp += OnResourcePickedUp;
         resource.transform.position = _spawnPoint.position;
         resource.transform.rotation = GetRandomRotation();
+        return resource;
+    }
+
+    public Resource SpawnResource(ResourceType resourceType, Vector3 at)
+    {
+        Resource resource = SpawnResource(resourceType);
+        resource.transform.position = at;
+        return resource;
     }
 
     private Quaternion GetRandomRotation()

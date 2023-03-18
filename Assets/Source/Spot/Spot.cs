@@ -14,7 +14,7 @@ public class Spot : MonoBehaviour
     {
         Produce();
 
-        if (_inputResourceQuantity >= _spotSettings.InputValue)
+        if (_inputResourceQuantity >= _spotSettings.InputValue && _inProduction == false)
         {
             StartProduction();
         }
@@ -50,11 +50,9 @@ public class Spot : MonoBehaviour
 
     private void CreateOutput()
     {
-        //List<Resource> resources = _resourcesPool.Get(_spotSettings.OutputResource, _spotSettings.OutputValue);
-
-        //for (int i = 0; i < resources.Count; i++)
-        //{
-        //    resources[i].transform.position = Random.insideUnitSphere;
-        //}
+        for (int i = 0; i < _spotSettings.OutputValue; i++)
+        {
+            _resourceSpawner.SpawnResource(_spotSettings.OutputResource);
+        }
     }
 }

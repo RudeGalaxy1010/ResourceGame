@@ -14,7 +14,8 @@ public class Inventory
         _resources = new Dictionary<ResourceType, int>();
     }
 
-    public bool HasResource(ResourceType resourceType) => _resources.ContainsKey(resourceType);
+    public bool HasResource(ResourceType resourceType) => _resources.ContainsKey(resourceType) 
+        && _resources[resourceType] > 0;
     public bool HasEnoughResource(ResourceType resourceType, int quantity) =>
         HasResource(resourceType) && _resources[resourceType] >= quantity;
     public int GetResourceQuantity(ResourceType resourceType) => HasResource(resourceType) ?

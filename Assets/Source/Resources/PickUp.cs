@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(Resources))]
@@ -9,37 +10,56 @@ public class PickUp : MonoBehaviour
     public event Action<PickUp, Resource> PickedUp;
 
     [SerializeField] private PickUpSettings _pickUpSettings;
+    [SerializeField] private PlayerDetector _playerDetector;
 
     private Resource _resource;
-    private Collider[] _colliders;
+    private Collider _collider;
     private Rigidbody _rigidbody;
-    private Player _player;
+    private Transform _target;
 
     private void Update()
     {
-        if (_player == null)
+        if (_target == null && _playerDetector.IsPlayerInRange == true)
+        {
+            StartMoveTo(_playerDetector.Players.First().transform);
+        }
+
+        if (_target == null)
         {
             return;
         }
 
-        MoveTo(_player.transform.position);
+        MoveTo(_target.position);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnEnable()
     {
-        if (other.TryGetComponent(out Player player))
-        {
-            StartMoveTo(player);
-        }
-    }
-
-    public void ResetAll()
-    {
-        _player = null;
+        _target = null;
         transform.localScale = Vector3.one;
         CheckAndFindComponents();
         SetCollidersEnabled(true);
         SetRigidbodyUseGravity(true);
+    }
+
+    public void SetActive(bool isActive)
+    {
+        CheckAndFindComponents();
+
+        _playerDetector.gameObject.SetActive(isActive);
+        _collider.enabled = isActive;
+
+        if (_rigidbody != null)
+        {
+            _rigidbody.useGravity = isActive;
+            _rigidbody.velocity = Vector3.zero;
+        }
+    }
+
+    public void StartMoveTo(Transform target)
+    {
+        SetRigidbodyUseGravity(false);
+        SetCollidersEnabled(false);
+        _target = target;
     }
 
     private void MoveTo(Vector3 position)
@@ -55,13 +75,6 @@ public class PickUp : MonoBehaviour
             Vector3.zero, _pickUpSettings.ScaleSpeed * Time.deltaTime);
     }
 
-    private void StartMoveTo(Player player)
-    {
-        SetRigidbodyUseGravity(false);
-        SetCollidersEnabled(false);
-        _player = player;
-    }
-
     private void CheckAndFindComponents()
     {
         if (_resource == null)
@@ -69,9 +82,9 @@ public class PickUp : MonoBehaviour
             _resource = GetComponent<Resource>();
         }
 
-        if (_colliders == null || _colliders.Length == 0)
+        if (_collider == null)
         {
-            _colliders = GetComponents<Collider>();
+            _collider = GetComponent<Collider>();
         }
 
         if (_rigidbody == null)
@@ -93,15 +106,20 @@ public class PickUp : MonoBehaviour
 
     private void SetCollidersEnabled(bool isEnabled)
     {
-        for (int i = 0; i < _colliders.Length; i++)
-        {
-            _colliders[i].enabled = isEnabled;
-        }
+        _collider.enabled = isEnabled;
     }
 
     private void EndMove()
     {
-        _player.Inventory.AddResource(_resource.ResourceType, _resource.Quantity);
+        if (_target.TryGetComponent(out Player player))
+        {
+            player.Inventory.AddResource(_resource.ResourceType, _resource.Quantity);
+        }
+        else if (_target.TryGetComponent(out Spot spot))
+        {
+            spot.AddResource(_resource.Quantity);
+        }
+
         PickedUp?.Invoke(this, _resource);
     }
 }

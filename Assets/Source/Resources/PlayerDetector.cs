@@ -9,14 +9,14 @@ public class PlayerDetector : MonoBehaviour
     public bool IsPlayerInRange => _players.Count > 0;
     public IReadOnlyList<Player> Players => _players;
 
-    private void Awake()
+    private void OnEnable()
     {
         _players = new List<Player>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Player player) && _players.Contains(player) == false)
         {
             _players.Add(player);
         }
@@ -24,7 +24,7 @@ public class PlayerDetector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Player player) && _players.Contains(player) == true)
         {
             _players.Remove(player);
         }
