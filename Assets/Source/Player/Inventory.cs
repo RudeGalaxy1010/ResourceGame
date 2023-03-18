@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class Inventory
+public class Inventory : ISaveable<Dictionary<ResourceType, int>>
 {
     private const string NegativeQuantityExceptionMessage = "Negative quantity of resource is not allowed";
 
@@ -67,6 +67,17 @@ public class Inventory
         }
 
         _resources[resourceType] -= quantity;
+        ResourcesUpdated?.Invoke(this);
+    }
+
+    public Dictionary<ResourceType, int> GetData()
+    {
+        return _resources;
+    }
+
+    public void SetData(Dictionary<ResourceType, int> resources)
+    {
+        _resources = resources;
         ResourcesUpdated?.Invoke(this);
     }
 }
