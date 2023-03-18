@@ -11,10 +11,18 @@ public class ResourceCollector : MonoBehaviour
     [SerializeField] private CollectionSettings _collectionSettings;
     [SerializeField] private ResourceSpawner _resourceSpawner;
 
+    private Coroutine _collectionCoroutine;
+
     private void Update()
     {
         if (_playerDetector.IsPlayerInRange == false)
         {
+            if (_collectionCoroutine != null)
+            {
+                StopCoroutine(_collectionCoroutine);
+                _collectionCoroutine = null;
+            }
+
             return;
         }
 
@@ -26,34 +34,37 @@ public class ResourceCollector : MonoBehaviour
 
     private void TryGetResource(Player player)
     {
+        if (_collectionCoroutine != null)
+        {
+            return;
+        }
+
         if (player.Move.IsMoving == true
             || player.Inventory.HasResource(_spotSettings.InputResource) == false)
         {
             return;
         }
 
-        int resourceInInventoryQuantity = player.Inventory.GetResourceQuantity(_spotSettings.InputResource);
-        int quantityToRemove = resourceInInventoryQuantity >= _spotSettings.InputValue
-            ? _spotSettings.InputValue : resourceInInventoryQuantity;
-        player.Inventory.RemoveResource(_spotSettings.InputResource, quantityToRemove);
-
-        StartCoroutine(StartResourceSpawn(quantityToRemove, player));
+        _collectionCoroutine = StartCoroutine(StartResourceSpawn(player));
     }
 
-    private IEnumerator StartResourceSpawn(int quantity, Player player)
+    private IEnumerator StartResourceSpawn(Player player)
     {
         WaitForSeconds waitForSeconds = new WaitForSeconds(_collectionSettings.SpawnDelay);
 
-        for (int i = 0; i < quantity; i++)
+        while (player.Inventory.HasResource(_spotSettings.InputResource))
         {
+            player.Inventory.RemoveResource(_spotSettings.InputResource, 1);
             Resource resource = _resourceSpawner.SpawnResource(_spotSettings.InputResource);
             PickUp pickUp = resource.GetComponent<PickUp>();
             pickUp.SetActive(false);
-            Vector3 offset = new Vector3(Random.value - ValueOffset, Random.value - ValueOffset, 0) 
+            Vector3 offset = new Vector3(Random.value - ValueOffset, Random.value - ValueOffset, 0)
                 * _collectionSettings.Spread;
             pickUp.transform.position = player.transform.position + offset;
             pickUp.StartMoveTo(transform);
             yield return waitForSeconds;
         }
+
+        _collectionCoroutine = null;
     }
 }
