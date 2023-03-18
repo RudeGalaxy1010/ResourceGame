@@ -45,7 +45,6 @@ public class PickUp : MonoBehaviour
     {
         CheckAndFindComponents();
 
-        _playerDetector.gameObject.SetActive(isActive);
         _collider.enabled = isActive;
 
         if (_rigidbody != null)
