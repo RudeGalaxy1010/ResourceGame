@@ -9,7 +9,7 @@ public class ScaleAnimation : MonoBehaviour
     private float _scaleEndValue;
     private float _duration;
 
-    private void Start()
+    private void Awake()
     {
         _scaleEndValue = transform.localScale.x * _scaleAnimationSettings.ScaleEndValue;
         _duration = _scaleAnimationSettings.Duration / 2f; // Scale up and return to default takes double time
