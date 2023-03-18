@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class InProduction : State
 {
+    public event Action<InProduction> ProductionStarted;
+
     [SerializeField] private ResourceType _resourceType;
     [SerializeField] private ProductionSettings _productionSettings;
     [SerializeField] private ResourceSpawner _resourceSpawner;
@@ -15,6 +18,7 @@ public class InProduction : State
     {
         _timer = 0;
         _resourcesProduced = 0;
+        ProductionStarted?.Invoke(this);
     }
 
     private void Update()

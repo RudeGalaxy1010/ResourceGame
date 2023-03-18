@@ -2,21 +2,16 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] private Player _player;
     [SerializeField] private Pointer _resourceProducerPointer;
+    [SerializeField] private InProduction _inProductionState;
     [SerializeField] private Pointer _spotPointer;
     [SerializeField] private Spot _spot;
+    [SerializeField] private GameObject _pointerIcon;
 
     private void OnEnable()
     {
-        _player.Inventory.ResourcesUpdated += OnResourcesUpdated;
-        _spot.ProductionStarted += OnProductionStarted;
-    }
-
-    private void OnDisable()
-    {
-        _player.Inventory.ResourcesUpdated -= OnResourcesUpdated;
-        _spot.ProductionStarted -= OnProductionStarted;
+        _inProductionState.ProductionStarted += OnResourceProductionStarted;
+        _spot.ProductionStarted += OnSpotProductionStarted;
     }
 
     private void Start()
@@ -31,16 +26,17 @@ public class Tutorial : MonoBehaviour
         _spotPointer.enabled = false;
     }
 
-    private void OnResourcesUpdated(Inventory inventory)
+    private void OnResourceProductionStarted(InProduction inProduction)
     {
-        _player.Inventory.ResourcesUpdated -= OnResourcesUpdated;
+        inProduction.ProductionStarted -= OnResourceProductionStarted;
         _resourceProducerPointer.enabled = false;
         _spotPointer.enabled = true;
     }
 
-    private void OnProductionStarted(Spot spot)
+    private void OnSpotProductionStarted(Spot spot)
     {
-        _spot.ProductionStarted -= OnProductionStarted;
+        _spot.ProductionStarted -= OnSpotProductionStarted;
         _spotPointer.enabled = false;
+        _pointerIcon.SetActive(false);
     }
 }
