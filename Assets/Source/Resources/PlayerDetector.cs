@@ -1,13 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(SphereCollider))]
 public class PlayerDetector : MonoBehaviour
 {
+    [SerializeField] private DetectionSettings _detectionSettings;
+
     private List<Player> _players;
 
     public bool IsPlayerInRange => _players.Count > 0;
     public IReadOnlyList<Player> Players => _players;
+
+    private void Awake()
+    {
+        SphereCollider collider = GetComponent<SphereCollider>();
+        collider.radius = _detectionSettings.DetectionRadius;
+    }
 
     private void OnEnable()
     {

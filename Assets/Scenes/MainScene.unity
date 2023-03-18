@@ -770,6 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerDetector: {fileID: 1983329381}
   _spotSettings: {fileID: 11400000, guid: ea37ff8d2fb38e140b9f5a3fe4968973, type: 2}
+  _collectionSettings: {fileID: 11400000, guid: a00ebdb2236b1c54fa6666f6bb69045f, type: 2}
   _resourceSpawner: {fileID: 507773272}
 --- !u!1 &255469660
 GameObject:
@@ -934,8 +935,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 308471678}
-  - component: {fileID: 308471680}
-  - component: {fileID: 308471690}
   - component: {fileID: 308471679}
   - component: {fileID: 308471681}
   - component: {fileID: 308471689}
@@ -966,6 +965,7 @@ Transform:
   - {fileID: 88254413}
   - {fileID: 945085305}
   - {fileID: 1424678964}
+  - {fileID: 1242271752}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -982,19 +982,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialState: {fileID: 308471681}
---- !u!135 &308471680
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308471677}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &308471681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 308471681}
-  _playerDetector: {fileID: 308471690}
+  _playerDetector: {fileID: 1242271753}
 --- !u!114 &308471685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,19 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 308471683}
-  _playerDetector: {fileID: 308471690}
---- !u!114 &308471690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308471677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474f51541ef0bdb4eb4287c1e26c7dfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _playerDetector: {fileID: 1242271753}
 --- !u!1 &360931423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,6 +2712,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1242271751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242271752}
+  - component: {fileID: 1242271754}
+  - component: {fileID: 1242271753}
+  m_Layer: 0
+  m_Name: Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1242271752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242271751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 308471678}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1242271753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242271751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474f51541ef0bdb4eb4287c1e26c7dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detectionSettings: {fileID: 11400000, guid: 3819b09c919b5ee4cb9dbe8e45898d17, type: 2}
+--- !u!135 &1242271754
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242271751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1322167515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8758888183437167707, guid: 2caeb99d3229fee4aa4f3bc8c1c8fc07, type: 3}
@@ -3473,6 +3507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f51541ef0bdb4eb4287c1e26c7dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _detectionSettings: {fileID: 11400000, guid: d2592ade4d50bb441ab8be64b95463a4, type: 2}
 --- !u!1 &2069895795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f80c8d70e17dd84b96bd302801c43c9, type: 3}

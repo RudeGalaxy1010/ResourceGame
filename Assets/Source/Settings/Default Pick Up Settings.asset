@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87237d463ad7a9d40a878c7593b9fed6, type: 3}
   m_Name: Default Pick Up Settings
   m_EditorClassIdentifier: 
+  PickRadius: 1
   MoveSpeed: 5
   ScaleSpeed: 3

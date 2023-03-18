@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63f5512e7cd2fc24194a84b72f22bdf5, type: 3}
-  m_Name: Default Production Settings
+  m_Script: {fileID: 11500000, guid: 87c3c94be0000c84c92806f4a516966b, type: 3}
+  m_Name: Wide Detection Settings
   m_EditorClassIdentifier: 
-  TimeToGetResourceUnit: 0.5
-  MaxResourcesBeforeRecover: 10
-  RecoverTime: 10
+  DetectionRadius: 3

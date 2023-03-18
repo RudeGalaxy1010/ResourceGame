@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63f5512e7cd2fc24194a84b72f22bdf5, type: 3}
-  m_Name: Default Production Settings
+  m_Script: {fileID: 11500000, guid: 0e8153e81f37e5044854c5ec73f3353e, type: 3}
+  m_Name: Default Drop Settings
   m_EditorClassIdentifier: 
-  TimeToGetResourceUnit: 0.5
-  MaxResourcesBeforeRecover: 10
-  RecoverTime: 10
+  DropHeight: 1
+  Spread: 1
