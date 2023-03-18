@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3083494425528789249}
   - component: {fileID: 4727072539629740583}
   - component: {fileID: 5405178197554749994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4259007708782573966}
   - component: {fileID: 4075984841881734052}
   - component: {fileID: 1602585670941669934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 3869395822078621217}
   - component: {fileID: 81774307376710352}
   - component: {fileID: 4720504803226487498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4108139491827977232}
   - component: {fileID: 6977434716476576404}
   - component: {fileID: 5539823667551117354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1532137799529796488}
   - component: {fileID: 5427372182867407060}
   - component: {fileID: 6103394191775322897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 3869395822078621217}
   - component: {fileID: 81774307376710352}
   - component: {fileID: 4720504803226487498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
