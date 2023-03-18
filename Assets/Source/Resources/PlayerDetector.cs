@@ -6,7 +6,7 @@ public class PlayerDetector : MonoBehaviour
 {
     [SerializeField] private DetectionSettings _detectionSettings;
 
-    private List<Player> _players;
+    private List<Player> _players = new List<Player>();
 
     public bool IsPlayerInRange => _players.Count > 0;
     public IReadOnlyList<Player> Players => _players;
@@ -15,11 +15,6 @@ public class PlayerDetector : MonoBehaviour
     {
         SphereCollider collider = GetComponent<SphereCollider>();
         collider.radius = _detectionSettings.DetectionRadius;
-    }
-
-    private void OnEnable()
-    {
-        _players = new List<Player>();
     }
 
     private void OnTriggerEnter(Collider other)

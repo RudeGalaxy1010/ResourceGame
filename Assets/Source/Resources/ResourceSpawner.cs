@@ -17,13 +17,6 @@ public class ResourceSpawner : MonoBehaviour
         return resource;
     }
 
-    public Resource SpawnResource(ResourceType resourceType, Vector3 at)
-    {
-        Resource resource = SpawnResource(resourceType);
-        resource.transform.position = at;
-        return resource;
-    }
-
     private Quaternion GetRandomRotation()
     {
         var rotationVector = new Vector3(Random.value, Random.value, Random.value) * MaxRotation;

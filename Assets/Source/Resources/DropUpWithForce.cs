@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider), typeof(Rigidbody))]
 public class DropUpWithForce : MonoBehaviour
 {
+    private const float ValueOffset = 0.5f;
+
     [SerializeField] private DropSettings _dropSettings;
 
     private Collider _collider;
@@ -36,7 +38,8 @@ public class DropUpWithForce : MonoBehaviour
     private Vector3 GetRandomForce()
     {
         float yForce = Mathf.Sqrt(2 * _dropSettings.DropHeight * Mathf.Abs(Physics.gravity.y));
-        var forceVector = new Vector3(Random.value, 0, Random.value) * _dropSettings.Spread;
+        var forceVector = new Vector3(Random.value - ValueOffset, 0, Random.value - ValueOffset) 
+            * _dropSettings.Spread;
         forceVector.y = yForce;
         return forceVector;
     }

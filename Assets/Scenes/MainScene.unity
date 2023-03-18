@@ -1089,7 +1089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 308471681}
-  _productionSettings: {fileID: 11400000, guid: d1460d03e6475e34a99f286d74cf25b2, type: 2}
+  _recover: {fileID: 308471687}
 --- !u!114 &308471687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,13 +1097,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308471677}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb81dae0c45d9c9458d521b69a7eb55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 308471686}
+  _productionSettings: {fileID: 11400000, guid: d1460d03e6475e34a99f286d74cf25b2, type: 2}
 --- !u!114 &308471689
 MonoBehaviour:
   m_ObjectHideFlags: 0

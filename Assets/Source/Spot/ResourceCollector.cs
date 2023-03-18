@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Spot))]
 public class ResourceCollector : MonoBehaviour
 {
+    private const float ValueOffset = 0.5f;
+
     [SerializeField] private PlayerDetector _playerDetector;
     [SerializeField] private SpotSettings _spotSettings;
     [SerializeField] private CollectionSettings _collectionSettings;
@@ -47,7 +49,8 @@ public class ResourceCollector : MonoBehaviour
             Resource resource = _resourceSpawner.SpawnResource(_spotSettings.InputResource);
             PickUp pickUp = resource.GetComponent<PickUp>();
             pickUp.SetActive(false);
-            Vector3 offset = new Vector3(Random.value, Random.value, 0) * _collectionSettings.Spread;
+            Vector3 offset = new Vector3(Random.value - ValueOffset, Random.value - ValueOffset, 0) 
+                * _collectionSettings.Spread;
             pickUp.transform.position = player.transform.position + offset;
             pickUp.StartMoveTo(transform);
             yield return waitForSeconds;
