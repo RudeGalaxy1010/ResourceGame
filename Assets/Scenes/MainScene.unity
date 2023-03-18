@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20258941}
   - component: {fileID: 20258942}
+  - component: {fileID: 20258943}
   m_Layer: 5
   m_Name: Metal
   m_TagString: Untagged
@@ -175,6 +176,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quantityText: {fileID: 1750542544}
+  _scaleAnimation: {fileID: 20258943}
+--- !u!114 &20258943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20258940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec542782c618814b982e4607f7f8d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleAnimationSettings: {fileID: 11400000, guid: 764f76b97e6bbc04795c81fab2534723, type: 2}
 --- !u!1 &88254412
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +669,7 @@ GameObject:
   - component: {fileID: 253716979}
   - component: {fileID: 253716984}
   - component: {fileID: 253716986}
+  - component: {fileID: 253716987}
   m_Layer: 0
   m_Name: Spot
   m_TagString: Untagged
@@ -757,6 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spotSettings: {fileID: 11400000, guid: ea37ff8d2fb38e140b9f5a3fe4968973, type: 2}
   _resourceSpawner: {fileID: 1158631823}
+  _scaleAnimation: {fileID: 253716987}
 --- !u!114 &253716986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +790,19 @@ MonoBehaviour:
   _spotSettings: {fileID: 11400000, guid: ea37ff8d2fb38e140b9f5a3fe4968973, type: 2}
   _collectionSettings: {fileID: 11400000, guid: a00ebdb2236b1c54fa6666f6bb69045f, type: 2}
   _resourceSpawner: {fileID: 507773272}
+--- !u!114 &253716987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253716978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec542782c618814b982e4607f7f8d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleAnimationSettings: {fileID: 11400000, guid: 764f76b97e6bbc04795c81fab2534723, type: 2}
 --- !u!1 &255469660
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +974,7 @@ GameObject:
   - component: {fileID: 308471685}
   - component: {fileID: 308471687}
   - component: {fileID: 308471686}
+  - component: {fileID: 308471690}
   m_Layer: 0
   m_Name: Wood Producer
   m_TagString: Untagged
@@ -1015,6 +1046,7 @@ MonoBehaviour:
   _resourceType: 0
   _productionSettings: {fileID: 11400000, guid: d1460d03e6475e34a99f286d74cf25b2, type: 2}
   _resourceSpawner: {fileID: 88254414}
+  _scaleAnimation: {fileID: 308471690}
 --- !u!114 &308471684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,6 +1118,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetState: {fileID: 308471683}
   _playerDetector: {fileID: 1242271753}
+--- !u!114 &308471690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308471677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec542782c618814b982e4607f7f8d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleAnimationSettings: {fileID: 11400000, guid: 764f76b97e6bbc04795c81fab2534723, type: 2}
 --- !u!1 &360931423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,6 +1217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 378036844}
   - component: {fileID: 378036845}
+  - component: {fileID: 378036846}
   m_Layer: 5
   m_Name: Crystal
   m_TagString: Untagged
@@ -1214,6 +1260,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quantityText: {fileID: 1417047953}
+  _scaleAnimation: {fileID: 378036846}
+--- !u!114 &378036846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378036843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec542782c618814b982e4607f7f8d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleAnimationSettings: {fileID: 11400000, guid: 764f76b97e6bbc04795c81fab2534723, type: 2}
 --- !u!1 &436172491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,6 +2308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 865663277}
   - component: {fileID: 865663278}
+  - component: {fileID: 865663279}
   m_Layer: 5
   m_Name: Wood
   m_TagString: Untagged
@@ -2290,6 +2351,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quantityText: {fileID: 610432579}
+  _scaleAnimation: {fileID: 865663279}
+--- !u!114 &865663279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865663276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec542782c618814b982e4607f7f8d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleAnimationSettings: {fileID: 11400000, guid: 764f76b97e6bbc04795c81fab2534723, type: 2}
 --- !u!1 &897854255
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class Spot : MonoBehaviour
 
     [SerializeField] private SpotSettings _spotSettings;
     [SerializeField] private ResourceSpawner _resourceSpawner;
+    [SerializeField] private ScaleAnimation _scaleAnimation;
 
     private int _inputResourceQuantity;
     private float _timer;
@@ -49,10 +50,12 @@ public class Spot : MonoBehaviour
         _inputResourceQuantity -= _spotSettings.InputValue;
         _inProduction = true;
         ProductionStarted?.Invoke(this);
+        _scaleAnimation.PlayInfinite();
     }
 
     private void CreateOutput()
     {
+        _scaleAnimation.Stop();
         for (int i = 0; i < _spotSettings.OutputValue; i++)
         {
             _resourceSpawner.SpawnResource(_spotSettings.OutputResource);

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class InProduction : State
     [SerializeField] private ResourceType _resourceType;
     [SerializeField] private ProductionSettings _productionSettings;
     [SerializeField] private ResourceSpawner _resourceSpawner;
+    [SerializeField] private ScaleAnimation _scaleAnimation;
 
     private float _timer;
     private int _resourcesProduced;
@@ -19,6 +21,12 @@ public class InProduction : State
         _timer = 0;
         _resourcesProduced = 0;
         ProductionStarted?.Invoke(this);
+        _scaleAnimation.PlayInfinite();
+    }
+
+    private void OnDisable()
+    {
+        _scaleAnimation.Stop();
     }
 
     private void Update()
