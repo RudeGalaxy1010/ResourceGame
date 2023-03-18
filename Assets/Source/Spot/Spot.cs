@@ -1,8 +1,10 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Spot : MonoBehaviour
 {
+    public event Action<Spot> ProductionStarted;
+
     [SerializeField] private SpotSettings _spotSettings;
     [SerializeField] private ResourceSpawner _resourceSpawner;
 
@@ -46,6 +48,7 @@ public class Spot : MonoBehaviour
     {
         _inputResourceQuantity -= _spotSettings.InputValue;
         _inProduction = true;
+        ProductionStarted?.Invoke(this);
     }
 
     private void CreateOutput()
